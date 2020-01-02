@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <base href="<%=basePath%>">
+    <title>管理员页面</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/admin.js"></script>
+
+
+</head>
+<body style="background-color: ghostwhite">
+
+
+    <ul>
+        <li><a class="active" href="/admin">首页</a></li>
+        <li><a href="/informManage">举报管理页</a></li>
+        <li style="float:right"><a href="/logout">退出</a></li>
+
+
+    </ul>
+
+
+
+
+
+<h1 style="text-align: center">欢迎你：[[${user.name}]]管理员，你可以在本页面删除任意帖子</h1>
+
+<div style="text-align:center">
+    <p style="text-align: center">
+    <h2>总共有[[${pageSize}]]当前页数<span id="testid"></span></h2>
+
+        <input type="hidden" id="maxpage" th:value="${pageSize}">
+        <input type="submit"  value="上一页" onclick="pre()">
+
+        <input type="submit" value="下一页" onclick="next()">
+        <input type="text" id="jumpPage" placeholder="请填写要跳转页面" size="13">
+        <input type="submit" value="跳转" onclick="jump()">
+
+    </p>
+    <table  style="width:100%; height:100%" >
+        <tr>
+
+            <th style="width:50%">title</th>
+            <th style="width:20%">作者/时间</th>
+            <th style="width:20%">评论数/点赞数</th>
+            <th style="width:10%">操作</th>
+        </tr>
+
+        <div style="text-align:center">
+            <table id="table" style="width:100%; height:100%">
+            </table>
+
+
+        </div>
+    </table>
+    <p style="text-align: center">
+
+
+
+        <input type="submit"  value="上一页" onclick="pre()">
+
+        <input type="submit" value="下一页" onclick="next()">
+
+
+    </p>
+
+</div>
+
+</body>
+</html>

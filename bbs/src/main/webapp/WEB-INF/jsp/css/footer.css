@@ -1,0 +1,19 @@
+
+.footer{
+    width: 980px;
+    margin:60px auto;
+
+}
+.footer ul{
+    margin-left: 100px;
+}
+.footer ul li{
+    float: left;
+
+}
+.footer ul li a{
+    text-decoration: none;
+    color: black;
+    border-left: 2px solid black;
+    padding:0 10px;
+}

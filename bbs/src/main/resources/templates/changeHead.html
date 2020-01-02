@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
+    <meta charset="UTF-8">
+    <title>发布帖子</title>
+    <link rel="stylesheet" type="text/css" href="css/post.css">
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/changeHeadUrl.js"></script>
+</head>
+<body>
+<div id="header"> </div>
+    <div class="Content-Main">
+        <div class="Content-Main1">
+            <h1>修改头像</h1>
+        </div>
+        <form action="/changePost" method="post" class="form-report" enctype="multipart/form-data">
+
+            <label>
+                <div class="upload_box" id="url">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b>&nbsp;&nbsp;&nbsp;上传图片</b>
+
+                    <input type="file" name="file" id="file" accept="image/*" onchange="imgChange(this);"/> <!--文件上传选择按钮-->
+
+                    <div id="preview">
+
+                        <img id="imghead" src="insert_image.gif" width="260" height="180" /> <!--图片显示位置-->
+
+                    </div>
+
+                </div>
+
+
+
+
+            <label>
+                <input id="button" type="submit" value="提交" name="submit" >
+            </label>
+
+            <input type="hidden" id="code" th:value="${code}">
+            </label>
+        </form>
+    </div>
+<div id="footer"> </div>
+</body>
+</html>

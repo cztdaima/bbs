@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>[[${vo.get("news").getTitle()}]]</title>
+    <link rel="stylesheet" type="text/css" href="css/inform.css">
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/messageDetail.js"></script>
+</head>
+<body>
+
+    <div id="header"> </div>
+
+
+    <div style="text-align:center">
+    <div style="border: 1px solid black;border-radius: 15px;box-shadow: 10px 10px 5px #888888;">
+    <div style="border: 1px solid black;border-radius: 10px;whith:100%;height: 50px;background-color:#9DB3C5">
+    <p>【[[${ vo.get("news").getSection()}]]】
+    [[${ vo.get("news").getTitle()}]]
+    <i style="float: right">
+
+        <i class="like">喜欢数&nbsp;[[${ vo.get("news").getLike_count()}]]</i>
+
+        <i class="comment">评论数[[${ vo.get("news").getComment_count()}]]&nbsp;</i>
+        </i>
+    </p>
+    </div>
+    <table style="width:100%">
+            <tr>
+            <td style="whith:20%;background: #E8F3FD;border-radius: 15px">
+            <div style="border: 0px solid black;height:500px;float:left">
+                个人id： [[${vo.get("user").getId()}]] &nbsp; &nbsp; &nbsp;
+                </br>
+                个人姓名: [[${vo.get("user").getName()}]]
+                </br>
+                <img th:src='${vo.get("user").getHead_url()}' height="150" width="150">
+            </div>
+            </td>
+
+            <td style="width:80%">
+            <div>
+
+            <table style="height:300px;width: 100%">
+            <tr>
+
+                <td style="width: 20%;">
+                <span><img th:src='${ vo.get("news").getImage()}' height="auto" width="100%">
+                </span>
+                </td>
+
+                <td style="width: 60%;">
+                <div style="border: 1px solid white; height: 300px;float:left;overflow:hidden;width: 100%;text-align: left">
+                <i class="content"><br/>[[${ vo.get("news").getContent()}]]<br/></i>
+                </div>
+                </td>
+            </tr>
+
+    </table>
+    </div>
+
+    <div style="border-top: 1px solid black; height: 200px;clear: both;">
+             <div>
+                    <input type="hidden" id="message_id" name=message_id   th:value='${vo.get("news").getId()}'>
+                    <textarea id="describe" name="describe" placeholder="填写回复内容" style="width: 400px"></textarea>
+
+                    <input id="like" type="button" value="点赞" onclick="like()" style="top:536px; width:100px;position:absolute;left:46%;">
+                    <input id="post" type="submit" value="评论" onclick="validata()" style="top:536px; width:100px;position:absolute;left:56%;" >
+
+
+                    <input id="inform" type="button" value="举报" onclick="inform()" style="top:536px; width:100px;position:absolute;left:67%;">
+
+            </div>
+    </br>
+    <i class="date">创建日期&nbsp;[[${ vo.get("news").getCreated_date()}]]</i>
+    </div>
+    <div style="clear: both;"></div>
+
+    </td>
+    </tr>
+
+    </table>
+    </div>
+
+
+    </br>
+
+    <tr th:each="co : ${cos}">
+            </br>
+            <div style="border: 1px solid black;width: 80%;margin: 0 auto;border-radius: 8px;box-shadow: 10px 10px 5px #888888;">
+            <table style="width: 100%">
+            <tr>
+            <td style="width:20%;background: #E8F3FD">
+            <div style="border: 0px solid black;height:300px;float:left">
+            回帖id： [[${co.get("comment").getId()}]] &nbsp; &nbsp; &nbsp;
+            </br>
+            回帖人id： [[${co.get("comment").getUser_id()}]] &nbsp; &nbsp; &nbsp;
+            </br>
+
+            <img th:src='${co.get("user")}' height="150" width="150">
+            </br>
+            [[${co.get("comment").getCreate_date()}]]
+            </div>
+            </td>
+            <td style="width: 70%">
+            <div style="border: 2px solid white;height:300px;float:left">
+            <p>
+            [[${ co.get("comment").getComment()}]]
+            </p>
+
+            </div>
+            </td>
+            </tr>
+            </table>
+            <div style="clear: both;"></div>
+            </div>
+    </tr>
+    </div>
+
+
+    <div id="footer"> </div>
+
+
+</body>
+</html>

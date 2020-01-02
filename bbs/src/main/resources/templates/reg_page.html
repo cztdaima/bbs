@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <title>注册</title>
+    <base href="/">
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/reg.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+</head>
+<body>
+<div id="header"> </div>
+<div class="container">
+    <!-- 导航 -->
+
+
+    <!-- 主体内容 （登陆界面）-->
+    <div class="main">
+        <!-- 左侧信息栏 -->
+        <div class="sideleft">
+            <h1>东华大学    社交论坛</h1>
+            <h4>社交娱乐  让生活更有趣</h4>
+            </br></br></br>
+            <p>多发帖，开心每一天。</p>
+            <p>打造非一般的社交论坛。</p>
+
+        </div>
+        <!-- 右侧登陆界面 -->
+        <div class="sideright">
+            <div class="index">
+                <a th:href="@{/reg_page/(language='zh_CN')}">中文</a>
+                <a th:href="@{/reg_page/(language='en_US')}">English</a>
+                <br>
+                <br>
+
+                <form action="/reg" method="post" onSubmit="return validate()" name="loginForm">
+
+
+                    <label th:text="#{login.reg}" class="headline" >reg</label>
+                    <br>
+                    <br>
+
+                    <label th:text="#{login.username}" class="astyle">Username</label>
+                    <input name="username" type="text" autocomplete="off">
+
+                    <label th:text="#{login.password}" class="astyle">Password</label>
+                    <input name="password" type="password">
+                    <label th:text="#{login.rePassword}" class="astyle">Password</label>
+                    <input name="rePassword" type="password">
+
+                    <button  type="submit" th:text="#{login.sign}"></button>
+
+                    </br>
+                    <input type="hidden" id="code" th:value="${code}">
+                    <input type="hidden" id="coder" th:value="${coder}">
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 尾部 -->
+
+
+</div>
+<div id="footer"> </div>
+</body>
+</html>

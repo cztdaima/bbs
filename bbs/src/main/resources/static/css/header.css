@@ -1,0 +1,87 @@
+
+ul {
+	position:static;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: 	#C0C0C0;
+}
+
+li {
+    float: left;
+}
+
+#button {
+
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: yellow;
+}
+
+.active {
+    background-color: green;
+}
+
+
+li a, .dropbtn
+{
+    display:inline-block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+}
+
+.dropdown
+{
+    display:inline-block;
+}
+
+.dropdown-content
+{
+    display:none;
+    position:absolute;
+    background-color:#f9f9f9;
+    min-width:160px;
+
+}
+
+.dropdown-content a
+{
+    color:black;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+}
+
+
+.dropdown:hover .dropdown-content
+{
+    display:block;
+}
+
+#div2 {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-top: 10%;
+    z-index: 1001;
+    left: 0px;
+    top: 0px;
+}
+
+#loginTable{
+
+    width:30% ;
+    border:0 ;
+    background:#FF0000;
+    position:static;
+
+}

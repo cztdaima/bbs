@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>个人主页</title>
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/profile.js"></script>
+</head>
+
+
+<body style="text-align: center">
+
+<div id="header"> </div>
+    <p th:if="${user}"><img th:src='${user.head_url}' class="round_icon"  alt=""></p>
+        <input type="hidden" id="userId" th:value="${userId}">
+        <p th:if="${userId}eq ${user.id}">
+            <a href="/changeHead" name="changeHeadUrl" id="button1">修改头像</a>
+            <!--<a href="/changePassword" name="changePassword" id="button2">修改密码</a>-->
+            <input id="button2" type="button" onClick="openChange()" value="修改密码" />
+            <div id="pswChange">
+                <table  id="pswTable" align="center">
+                    <tr>
+                        <td><font color="#FFFFFF">修改密码：</font></td>
+                        <td align="right">
+                            <input type="button" value="关闭" onClick="closeChange()" style="cursor: hand;">
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2" width="100%" bgcolor="#FFFFFF" height="150">
+                            请输入要更改密码: <input type="password" id="newPassWord" name="password" size="20"/> </br>
+                            请您再次输入密码:  <input type="password" id="rePassWord" name="rePassWord" size="20"/>
+                            <br>
+                            <input type="submit" name="logoin" value="点击修改" onClick="changePassword()">
+
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+</p>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+<div style="text-align:center">
+    <table id="table" style="width:100%; height:100%">
+    </table>
+
+
+</div>
+
+
+<div id="footer"> </div>
+</body>
+
+
+
+</html>

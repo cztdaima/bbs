@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <base href="/" />
+    <title>首页</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+<body style="background-color: ghostwhite">
+
+    <div id="header"> </div>
+
+    <div id="search"> </div>
+
+
+
+
+    <script src='js/snowflakes.min.js'></script>
+    <script src="js/snowindex.js"></script>
+
+    <div style="text-align:center" id="Content-Main">
+        <p style="text-align: center">
+            总共有[[${pageSize}]]当前页数<span id="testid"></span>
+            <input type="hidden" id="pop" th:value="${pop}">
+            <input type="hidden" id="maxpage" th:value="${pageSize}">
+            <input type="submit"  value="上一页" onclick="pre()">
+
+            <input type="submit" value="下一页" onclick="next()">
+            <input type="text" id="jumpPage" placeholder="请填写要跳转页面" size="13">
+            <input type="submit" value="跳转" onclick="jump()">
+
+        </p>
+        <table  style="width:100%; height:100%" >
+        <tr>
+
+            <th style="width:60%">招聘职位</th>
+            <th style="width:20%">发布人/时间</th>
+            <th style="width:20%">评论数/点赞数</th>
+        </tr>
+
+            <div style="text-align:center">
+                <table id="table" style="width:100%; height:100%">
+
+                </table>
+
+
+            </div>
+        </table>
+        <p style="text-align: center">
+
+
+            <input type="submit"  value="上一页" onclick="pre()">
+
+            <input type="submit" value="下一页" onclick="next()">
+
+        </p>
+
+    </div>
+
+
+
+
+    <div id="footer"> </div>
+    <div id="back"> </div>
+</body>
+</html>
